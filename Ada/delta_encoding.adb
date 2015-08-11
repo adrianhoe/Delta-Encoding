@@ -16,14 +16,14 @@ procedure Delta_Encoding is
    
    function Delta_Encode ( Data : Int_Array ) return Int_Array is
       
-      Encoded_Data : Int_Array ( 1 .. Data'Size );
+      Encoded_Data : Int_Array ( 1 .. Data'Last );
       Last         : Integer;
       
    begin
       
       Last := 0;
       
-      for I in 1 .. Data'Size loop
+      for I in 1 .. Data'Last loop
          
          Encoded_Data ( I ) := Data ( I ) - Last;
          Last := Data ( I );
